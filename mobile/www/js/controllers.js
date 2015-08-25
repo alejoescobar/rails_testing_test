@@ -2,7 +2,6 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, BlogEntry) {
   BlogEntry.query().$promise.then(function(response){
-    debugger
     $scope.blog_entries = response;
   });
 })
