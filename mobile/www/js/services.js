@@ -1,7 +1,33 @@
 angular.module('starter.services', [])
 
-.factory('BlogEntry', function($resource) {
-  return $resource("http://localhost:3000/blog_entries/:id.json");
+.factory('BlogEntry', function($resource, api) {
+  return $resource(api.url("blog_entries/:id.json"));
+})
+
+.factory('api', function() {
+  return {
+    url: function(path) {
+      return this.base() + path;
+    },
+    base: function() {
+      if ( this.isTestMode() ) {
+        return "http://localhost:4321/"
+      } else if ( this.isLocalhost() ) {
+        return "http://localhost:4444/"
+      } else {
+        return "https://production-url.com/"
+      }
+    },
+    isLocalhost: function() {
+      return ionic.Platform.platform() === "macintel" && !this.isHttps();
+    },
+    isTestMode: function() {
+      return location.port && location.port == "5000";
+    },
+    isHttps: function() {
+      return window.location.origin.split(':')[0] == "https";
+    }
+  }
 })
 
 .factory('Chats', function() {
