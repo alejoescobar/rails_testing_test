@@ -36,7 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.3.8)
+    addressable (2.4.0)
     arel (6.0.3)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -48,6 +48,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-angular (0.1.2)
+      capybara
     childprocess (0.5.8)
       ffi (~> 1.0, >= 1.0.11)
     coffee-rails (4.1.0)
@@ -183,6 +185,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara (~> 2.4.4)
+  capybara-angular
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
@@ -192,7 +195,7 @@ DEPENDENCIES
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  selenium-webdriver (~> 2.48, >= 2.48.1)
+  selenium-webdriver
   spring
   sqlite3
   turbolinks

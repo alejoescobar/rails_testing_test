@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.feature 'adding blog entries' do
 
-  scenario 'allow a user to add a blog entry' do
+  scenario 'allow a user to add a blog entry', js: true do
     visit new_blog_entry_path
 
     fill_in 'Title', with: 'My Title'
